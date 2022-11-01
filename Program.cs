@@ -22,6 +22,7 @@ static class Program
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
                 
+
                 DrawTexture(texture, screenWidth / 4 - texture.width / 4, screenHeight / 4 - texture.height / 4, WHITE);
 
                 Raylib.EndDrawing();
@@ -78,9 +79,10 @@ public class Character {
 }
     public Texture2D playerImage() {
         Image image = LoadImage("img/broMosely.png");
+        ImageResize(ref image, 50, 50);
         Texture2D texture = LoadTextureFromImage(image);
-
-            UnloadImage(image);
+        UnloadImage(image);
+            
         return texture;
     }
 }
