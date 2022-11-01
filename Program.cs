@@ -1,5 +1,8 @@
 ﻿using Raylib_cs;
 using System.Numerics;
+using static Raylib_cs.Raylib;
+using static Raylib_cs.Color;
+using static Raylib_cs.PixelFormat;
 
 
 namespace Greed
@@ -9,14 +12,17 @@ static class Program
         public static void Main()
         {   
             Character mosley = new Character(); 
-            Raylib.InitWindow(2000, 1000, "GREED");
+            int screenWidth = 1000;
+            int screenHeight = 500;
+            Raylib.InitWindow(screenWidth, screenHeight, "GREED");
             Raylib.SetTargetFPS(60);
-
+            var texture = mosley.playerImage();
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.BLACK);
-                mosley.Player();
+                Raylib.ClearBackground(Color.WHITE);
+                
+                DrawTexture(texture, screenWidth / 4 - texture.width / 4, screenHeight / 4 - texture.height / 4, WHITE);
 
                 Raylib.EndDrawing();
             }
@@ -47,10 +53,10 @@ public class fallmovement
 //character
 public class Character {
     public void Player() {
-            var posHeight = 1500;
-            var posWidth = 1000;
-            var shipPosition = new Vector2(posHeight, posWidth);
-            var player = new Rectangle(100, 100, 50, 50);
+            
+            
+            
+            /*var player = playerImage();
             var playerSpeed = 50;
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
                     shipPosition.X += playerSpeed;
@@ -68,6 +74,13 @@ public class Character {
                     shipPosition.Y  += playerSpeed;
                 }
 
-                Raylib.DrawRectangleRec(player, Color.GOLD);
+                Raylib.DrawRectangleRec(player, Color.GOLD);*/
 }
+    public Texture2D playerImage() {
+        Image image = LoadImage("img/broMosely.png");
+        Texture2D texture = LoadTextureFromImage(image);
+
+            UnloadImage(image);
+        return texture;
+    }
 }
