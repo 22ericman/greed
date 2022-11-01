@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1zAVb6903zl07bdDCMgBjEQw+fSSYZBwIFzWEIEL4ng24qzvX8QJ2qz10T7+ZMBI0fzibL/j4fhjnDz2bcYDMg==",
+  "dgSpecHash": "yPkVnUzmuc5fJ1cobhGTi6sxPuJttcKt9vBiHFwdhKqBmxMAfOjVMMy6HnSpTcLbrGxYmSe6ks+br8agBqTQLw==",
   "success": true,
   "projectFilePath": "C:\\Git\\greed\\greed.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\JayDo\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\JayDo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
