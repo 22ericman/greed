@@ -1,4 +1,4 @@
-﻿﻿using Raylib_cs;
+﻿using Raylib_cs;
 using System.Numerics;
 
 
@@ -7,7 +7,8 @@ namespace Greed
 static class Program
     {
         public static void Main()
-        {    
+        {   
+            Character mosley = new Character(); 
             Raylib.InitWindow(2000, 1000, "GREED");
             Raylib.SetTargetFPS(60);
 
@@ -15,7 +16,7 @@ static class Program
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.BLACK);
-
+                mosley.Player();
 
                 Raylib.EndDrawing();
             }
