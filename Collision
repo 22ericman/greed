@@ -1,0 +1,44 @@
+ private void collision(Cast cast)
+        {
+
+            Actor person = cast.GetFirstActor("Player");
+            Trash  = cast.GetFirstActor("Trash");
+            List<Actor> Treasure = cast.GetActors("Treasure");
+
+            banner.SetText($"Score: {score.ToString()}");
+            int maxX = X.GetWidth();
+            int maxY = Y.GetHeight();
+            person.MoveNext(maxX, maxY);
+
+            Random random = new Random();
+            foreach (Actor actor in Treasure)
+            {
+                
+                if (person.GetPosition().Equals(Treasure.GetPosition()))
+                {
+                    Treasure Treasure = (Treasure) actor;
+                    score += Treasure.GetScore();
+                    person.SetText($"Score: {score.ToString()}");
+
+                    int x = random.Next(1, 60);
+                    int y = 0;
+                    Point position = new Point(x, y);
+                    position = position.Scale(10);
+
+                    Treasure.SetPosition(position); 
+                else
+                {
+                    Trash Trash = (Trash) actor;
+                    score -= Trash.GetScore();
+                    person.SetText($"Score: {score.ToString()}");
+
+                    int x = random.Next(1, 60);
+                    int y = 0;
+                    Point position = new Point(x, y);
+                    position = position.Scale(10);
+
+                    Trash.SetPosition(position);
+                }
+            } 
+        }
+    

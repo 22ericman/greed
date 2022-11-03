@@ -32,11 +32,14 @@ static class Program
 
 public class fallmovement
 {
+        for (int i = 1; i < 10000; i++)
+        {
         int fallspeed = 4;
         Random rndY = new Random();
         Random rndX = new Random();
-    
+        }
 }
+
 
 
 
