@@ -1,45 +1,58 @@
-﻿﻿using Raylib_cs;
+﻿using Raylib_cs;
 using System.Numerics;
-
+using static Raylib_cs.Raylib;
 
 namespace Greed
 {
-static class Program
+     class Program : MovementObjects
     {
+        public Program()
+        {
+        }
         public static void Main()
-        {    
-            Raylib.InitWindow(2000, 1000, "GREED");
+        {
+            //sets things up.
+            Player Player = new Player();
+            TrashObject TrashObject = new TrashObject();
+            TreasureObject TreasureObject = new TreasureObject();
+            var ScreenHeight = 520;
+            var ScreenWidth = 800;
+            Raylib.InitWindow(ScreenWidth, ScreenHeight, "Greed");
+            Raylib.InitAudioDevice();
             Raylib.SetTargetFPS(60);
+            int score = 0;
+           
+
 
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.BLACK);
+                Raylib.ClearBackground(Color.WHITE);
+                Raylib.DrawText($"Collect the circles and avoid the squares!        Your score is {score}", 12, 12, 18, Color.BLACK);
 
 
-                Raylib.EndDrawing();
-            }
+                //These two lines add mosleys texture into the game, and then moves it around with the arrowkeys.
+                var TextureReturn = Player.playerImage();
+                Player.PlayerCharacter(TextureReturn);
 
-            Raylib.CloseWindow();
-        }
-    }
-}
+<<<<<<< Updated upstream
+                 
+=======
+                TrashObject.DisplayFallingBlocksFull();
 
-
+                TreasureObject.DisplayFallingBlocksFull();
+>>>>>>> Stashed changes
 
 
 
 
 public class fallmovement
 {
-        for (int i = 1; i < 10000; i++)
-        {
         int fallspeed = 4;
         Random rndY = new Random();
         Random rndX = new Random();
-        }
+    
 }
-
 
 
 
@@ -70,6 +83,3 @@ public class Character {
                     shipPosition.Y  += playerSpeed;
                 }
 
-                Raylib.DrawRectangleRec(player, Color.GOLD);
-}
-}
