@@ -30,6 +30,16 @@ class Player : MovementObjects
         UnloadImage(image);
         return texture;
     }
+    //sound class that makes an umph sound
+    /*public Sound playerSound() {
+        Wave wave = Raylib.LoadWave("img/MinecraftDamage.wav");
+            Sound sound = Raylib.LoadSoundFromWave(wave);
+        //Sound sound = LoadSoundFromWave("img/MinecraftDamage.wav");
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
+                    Raylib.PlaySound(sound);
+                }
+
+    }*/
 
 // Takes the loaded texture and moves around the x and y values according to the arrow keys pressed. 
 // Only allows you to move to certain values so you are kept in a box.
