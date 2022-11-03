@@ -19,6 +19,7 @@ namespace Greed
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "Greed");
             Raylib.InitAudioDevice();
             Raylib.SetTargetFPS(60);
+            int score = 0;
            
 
 
@@ -26,6 +27,8 @@ namespace Greed
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
+                Raylib.DrawText($"Collect the circles and avoid the squares!        Your score is {score}", 12, 12, 18, Color.BLACK);
+
 
                 // Adds a new trash object every tick (that is a lot, we will want to turn that down to maybe like once every 60 ticks? 
                 // still once a second but a lot less then currently)
@@ -54,11 +57,7 @@ namespace Greed
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
 
-                Trash.GenerateTrash += 1;
-                if (Trash.GenerateTrash == 30)
-                    {
-                        Trash.GenerateTrash = 0;
-                    }
+                 
 
 
                 Raylib.EndDrawing();
