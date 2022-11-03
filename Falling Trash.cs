@@ -1,61 +1,107 @@
 using Raylib_cs;
 using System.Numerics;
 
-class Trash : Falling
+class FallBlock : Falling
 
 {
-    public List<Rectangle> TrashList = new List<Rectangle>();
+    public List<Rectangle> FallBlockList = new List<Rectangle>();
     MovementObjects Movement = new MovementObjects();
-    public int GenerateTrash;
+    public int GenerateFallBlock;
+
+    public Color COLOR;
     Falling fall = new Falling();
 
    
 
-    public Trash()
+    public FallBlock()
     {
-        GenerateTrash = 0;
+        GenerateFallBlock = 0;
         Movement.MovementSpeed = 4;
     }
-// Creates a single falling trash item
-    private Rectangle CreateTrashObject()
+// Creates a single falling FallBlock item
+    private Rectangle CreateFallBlockObject()
     {
     
-        var TrashObject = fall.FallingObject();
-        return TrashObject;
+        var FallBlockObject = fall.FallingObject();
+        return FallBlockObject;
     }
-// Causes the trash to fall
-    public Rectangle TrashFalling(Rectangle TrashObject)
+// Causes the FallBlock to fall
+    public Rectangle FallBlockFalling(Rectangle FallBlockObject)
     {
         
-        TrashObject.y = fall.FallingDown(TrashObject.y);
-        return TrashObject;
+        FallBlockObject.y = fall.FallingDown(FallBlockObject.y);
+        return FallBlockObject;
     }
 
-// Adds a single trash object to the trash list
-    private List<Rectangle> AddTrashListObject(Rectangle TrashObject)
+// Adds a single FallBlock object to the FallBlock list
+    private List<Rectangle> AddFallBlockListObject(Rectangle FallBlockObject)
     {
-        TrashList.Add(TrashObject);
-        return TrashList;
+        FallBlockList.Add(FallBlockObject);
+        return FallBlockList;
     }
 
-// Subtracts a single trash item from the list
-    private List<Rectangle> SubTrashListObject(Rectangle TrashObject)
+// Subtracts a single FallBlock item from the list
+    private List<Rectangle> SubFallBlockListObject(Rectangle FallBlockObject)
     {
-        TrashList.Remove(TrashObject);
-        return TrashList;
+        FallBlockList.Remove(FallBlockObject);
+        return FallBlockList;
     }
 
-//Is the function used to call the AddTrashListObject Method
-    public void UpdateAddTrashList()
+//Is the function used to call the AddFallBlockListObject Method
+    public void UpdateAddFallBlockList()
     {
-         AddTrashListObject(CreateTrashObject());
+         AddFallBlockListObject(CreateFallBlockObject());
     }
-//Is the function used to call the SubTrashListObject Method
-    public void UpdateSubTrashList(Rectangle TrashObject)
+//Is the function used to call the SubFallBlockListObject Method
+    public void UpdateSubFallBlockList(Rectangle FallBlockObject)
     {
-         SubTrashListObject(TrashObject);
+         SubFallBlockListObject(FallBlockObject);
 
     }
     
 
+    private void DisplayFallBlock()
+    {
+        if (GenerateFallBlock == 0)
+        {
+            UpdateAddFallBlockList();
+        }
+    }
+
+    private void DisplayFallBlockList()
+    {
+                //A for loop for each item in the list that updates each falling trash object, if it is too low it deletes it, in this for loop we will also need to do
+                //the hit detection for the player chracter (moselys head hehe)  
+        var ListAmount = FallBlockList.Count;
+        for(int i = 0; i < ListAmount; i++)
+        {
+        
+        FallBlockList[i] = FallBlockFalling(FallBlockList[i]);
+        Raylib.DrawRectangleRec(FallBlockList[i], Color);
+            if (FallBlockList[i].y >= 485)
+            {
+                FallBlockList.Remove(FallBlockList[i]);
+                ListAmount = FallBlockList.Count;
+            }
+        
+        }
+    }
+
+    //Counts the the frames and resets the counter to know when to create a trash object
+    private void NumberResetter()
+    {
+        GenerateFallBlock += 1;
+                if (GenerateFallBlock == 30)
+                    {
+                    GenerateFallBlock = 0;
+                    }
+    }
+    public void DisplayFallingBlocksFull()
+    {
+        DisplayFallBlock();
+        DisplayFallBlockList();
+        NumberResetter();
+
+    }
 }
+
