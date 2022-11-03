@@ -16,6 +16,7 @@ namespace Greed
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "Greed");
             Raylib.InitAudioDevice();
             Raylib.SetTargetFPS(60);
+            int score = 0;
            
 
 
@@ -23,6 +24,8 @@ namespace Greed
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
+                Raylib.DrawText($"Your score is {score}", 12, 12, 20, Color.BLACK);
+
 
                 // Adds a new trash object every tick (that is a lot, we will want to turn that down to maybe like once every 60 ticks? 
                 // still once a second but a lot less then currently)
