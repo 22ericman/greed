@@ -6,12 +6,14 @@ class Trash : Falling
 {
     public List<Rectangle> TrashList = new List<Rectangle>();
     MovementObjects Movement = new MovementObjects();
+    public int GenerateTrash;
     Falling fall = new Falling();
 
    
 
     public Trash()
     {
+        GenerateTrash = 0;
         Movement.MovementSpeed = 4;
     }
 // Creates a single falling trash item

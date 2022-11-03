@@ -6,6 +6,9 @@ namespace Greed
 {
      class Program : MovementObjects
     {
+        public Program()
+        {
+        }
         public static void Main()
         {
             //sets things up.
@@ -26,7 +29,10 @@ namespace Greed
 
                 // Adds a new trash object every tick (that is a lot, we will want to turn that down to maybe like once every 60 ticks? 
                 // still once a second but a lot less then currently)
-                Trash.UpdateAddTrashList();
+                if (Trash.GenerateTrash == 0)
+                    {
+                    Trash.UpdateAddTrashList();
+                    }
 
                 //A for loop for each item in the list that updates each falling trash object, if it is too low it deletes it, in this for loop we will also need to do
                 //the hit detection for the player chracter (moselys head hehe)  
@@ -48,7 +54,11 @@ namespace Greed
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
 
-                
+                Trash.GenerateTrash += 1;
+                if (Trash.GenerateTrash == 30)
+                    {
+                        Trash.GenerateTrash = 0;
+                    }
 
 
                 Raylib.EndDrawing();
