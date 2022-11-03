@@ -64,12 +64,14 @@ class Player : MovementObjects
                 }
                 int NewX = (int) xValue;
                 int NewY = (int) yValue;
+                DrawCircle(NewX +27, NewY+27, 23, BLACK);
                 DrawTexture(texture, NewX, NewY, WHITE);
                 
-                // Raylib.DrawRectangleRec(PlayerRectangle, Color.RED);`
+                
+                
     }
 
-
+    
 }
 
 
