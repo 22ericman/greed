@@ -35,13 +35,10 @@ namespace Greed
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
 
-<<<<<<< Updated upstream
                  
-=======
                 TrashObject.DisplayFallingBlocksFull();
 
                 TreasureObject.DisplayFallingBlocksFull();
->>>>>>> Stashed changes
 
 
 
