@@ -24,7 +24,7 @@ namespace Greed
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawText($"Your score is {score}", 12, 12, 20, Color.BLACK);
+                Raylib.DrawText($"Collect the circles and avoid the squares!        Your score is {score}", 12, 12, 18, Color.BLACK);
 
 
                 // Adds a new trash object every tick (that is a lot, we will want to turn that down to maybe like once every 60 ticks? 
@@ -51,7 +51,7 @@ namespace Greed
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
 
-                
+                 
 
 
                 Raylib.EndDrawing();

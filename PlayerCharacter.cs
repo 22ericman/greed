@@ -34,6 +34,8 @@ class Player : MovementObjects
     /*public Sound playerSound() {
         Wave wave = Raylib.LoadWave("img/MinecraftDamage.wav");
             Sound sound = Raylib.LoadSoundFromWave(wave);
+            Wave wave2 = Raylib.LoadWave("img/yes.wav");
+            Sound sound2 = Raylib.LoadSoundFromWave(wave2);
         //Sound sound = LoadSoundFromWave("img/MinecraftDamage.wav");
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
                     Raylib.PlaySound(sound);
@@ -66,6 +68,8 @@ class Player : MovementObjects
                 
                 // Raylib.DrawRectangleRec(PlayerRectangle, Color.RED);`
     }
+
+
 }
 
 
