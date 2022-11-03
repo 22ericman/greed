@@ -12,9 +12,9 @@ class Player : MovementObjects
     public Player()
 {
 
-     xValue = 400;
-     yValue = 460;
-     Movement.MovementSpeed = 4;
+     xValue = 380;
+     yValue = 420;
+     Movement.MovementSpeed = 5;
      
      
 }
@@ -25,7 +25,7 @@ class Player : MovementObjects
     {
         Image image = LoadImage("img/broMosely.png");
         ImageResize(ref image, 50, 50);
-        // var playerSpeed = 50;
+       
         Texture2D texture = LoadTextureFromImage(image);
         UnloadImage(image);
         return texture;
@@ -46,7 +46,7 @@ class Player : MovementObjects
     public void PlayerCharacter(Texture2D texture)
     {
                 
-                if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT) && xValue != 780) {
+                if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT) && xValue != 760) {
                     xValue = Movement.MovePositive(xValue);
                 }
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT) && xValue != 0) {
@@ -57,7 +57,7 @@ class Player : MovementObjects
                     yValue = Movement.MoveNegative(yValue);
                 }
 
-                if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN) && yValue !=460) {
+                if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN) && yValue !=475) {
                     yValue = Movement.MovePositive(yValue);
                 }
                 int NewX = (int) xValue;

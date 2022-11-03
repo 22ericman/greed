@@ -11,13 +11,12 @@ namespace Greed
             //sets things up.
             Player Player = new Player();
             Trash Trash = new Trash();
-            var ScreenHeight = 480;
+            var ScreenHeight = 520;
             var ScreenWidth = 800;
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "Greed");
             Raylib.InitAudioDevice();
             Raylib.SetTargetFPS(60);
-            Wave wave = Raylib.LoadWave("img/MinecraftDamage.wav");
-            Sound sound = Raylib.LoadSoundFromWave(wave);
+           
 
 
             while (!Raylib.WindowShouldClose())
@@ -49,9 +48,7 @@ namespace Greed
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
 
-                if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
-                    Raylib.PlaySound(sound);
-                }
+                
 
 
                 Raylib.EndDrawing();
