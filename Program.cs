@@ -40,7 +40,11 @@ namespace Greed
                 TrashObject.DisplayFallingBlocksFull();
 
                 TreasureObject.DisplayFallingBlocksFull();
+
+                Raylib.EndDrawing();
             }
+            Raylib.CloseAudioDevice();
+            Raylib.CloseWindow();
         }
     }
 }
@@ -60,7 +64,7 @@ public class fallmovement
 
 
 //character
-public class Character {
+/*public class Character {
     public void Player() {
             var posHeight = 1500;
             var posWidth = 1000;
@@ -84,4 +88,4 @@ public class Character {
                 }
     }
 }
-    
+    */
