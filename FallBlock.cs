@@ -75,9 +75,8 @@ class FallBlock : Falling
         var ListAmount = FallBlockList.Count;
         for(int i = 0; i < ListAmount; i++)
         {
-        
         FallBlockList[i] = FallBlockFalling(FallBlockList[i]);
-        Raylib.DrawRectangleRec(FallBlockList[i], Color.RED);
+        Raylib.DrawRectangleRec(FallBlockList[i], Color.BLUE);
             if (FallBlockList[i].y >= 485)
             {
                 FallBlockList.Remove(FallBlockList[i]);
