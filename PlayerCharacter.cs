@@ -34,8 +34,14 @@ class Player : MovementObjects
     /*public Sound playerSound() {
         Wave wave = Raylib.LoadWave("img/MinecraftDamage.wav");
             Sound sound = Raylib.LoadSoundFromWave(wave);
+                if (mosely eats treasure){
+                    Raylib.PlaySound(sound2);
+                }
             Wave wave2 = Raylib.LoadWave("img/yes.wav");
             Sound sound2 = Raylib.LoadSoundFromWave(wave2);
+                if (mosely get trashed){
+                        Raylib.PlaySound(sound);
+                    }
         //Sound sound = LoadSoundFromWave("img/MinecraftDamage.wav");
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
                     Raylib.PlaySound(sound);

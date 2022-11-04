@@ -29,7 +29,7 @@ namespace Greed
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawText($"Collect the circles and avoid the squares!        Your score is {score}", 12, 12, 18, Color.BLACK);
+                Raylib.DrawText($"Collect the treasure!        Your score is {score}", 12, 12, 18, Color.BLACK);
 
 
                 //These two lines add mosleys texture into the game, and then moves it around with the arrowkeys.
@@ -40,7 +40,7 @@ namespace Greed
                 TrashObject.DisplayFallingBlocksFull();
 
                 TreasureObject.DisplayFallingBlocksFull();
-
+            
                 Raylib.EndDrawing();
             }
             Raylib.CloseAudioDevice();
