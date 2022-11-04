@@ -8,6 +8,10 @@ class Player : MovementObjects
 {
     public float xValue;
     public float yValue;
+
+    
+    public Vector2 CircleCenter = new Vector2();
+
     MovementObjects Movement = new MovementObjects();
     public Player()
 {
@@ -15,8 +19,9 @@ class Player : MovementObjects
      xValue = 380;
      yValue = 420;
      Movement.MovementSpeed = 5;
-     
-     
+     CircleCenter.X = 380+27;
+     CircleCenter.Y = 420+27;
+
 }
 
 
@@ -34,14 +39,8 @@ class Player : MovementObjects
     /*public Sound playerSound() {
         Wave wave = Raylib.LoadWave("img/MinecraftDamage.wav");
             Sound sound = Raylib.LoadSoundFromWave(wave);
-                if (mosely eats treasure){
-                    Raylib.PlaySound(sound2);
-                }
             Wave wave2 = Raylib.LoadWave("img/yes.wav");
             Sound sound2 = Raylib.LoadSoundFromWave(wave2);
-                if (mosely get trashed){
-                        Raylib.PlaySound(sound);
-                    }
         //Sound sound = LoadSoundFromWave("img/MinecraftDamage.wav");
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE)) {
                     Raylib.PlaySound(sound);
@@ -70,7 +69,9 @@ class Player : MovementObjects
                 }
                 int NewX = (int) xValue;
                 int NewY = (int) yValue;
-                DrawCircle(NewX +27, NewY+27, 23, BLACK);
+                CircleCenter.X = (NewX+27);
+                CircleCenter.Y = (NewY+27);
+                DrawCircleV(CircleCenter, 23, BLACK);
                 DrawTexture(texture, NewX, NewY, WHITE);
                 
                 

@@ -29,9 +29,8 @@ namespace Greed
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
-                Raylib.DrawText($"Collect the treasure!        Your score is {score}", 12, 12, 18, Color.BLACK);
-
-
+                // Raylib.DrawText($"Collect the circles and avoid the squares!        Your score is {score}", 12, 12, 18, Color.BLACK);
+                Raylib.DrawText($"xvalue{Player.CircleCenter.X} yvalue{Player.CircleCenter.Y}", 50, 50, 18, Color.GREEN);
                 //These two lines add mosleys texture into the game, and then moves it around with the arrowkeys.
                 var TextureReturn = Player.playerImage();
                 Player.PlayerCharacter(TextureReturn);
@@ -40,7 +39,7 @@ namespace Greed
                 TrashObject.DisplayFallingBlocksFull();
 
                 TreasureObject.DisplayFallingBlocksFull();
-            
+
                 Raylib.EndDrawing();
             }
             Raylib.CloseAudioDevice();
@@ -48,20 +47,6 @@ namespace Greed
         }
     }
 }
-
-
-public class fallmovement
-{
-        int fallspeed = 4;
-        Random rndY = new Random();
-        Random rndX = new Random();
-    
-}
-
-
-
-
-
 
 //character
 /*public class Character {

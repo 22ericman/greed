@@ -1,5 +1,6 @@
 using Raylib_cs;
 using System.Numerics;
+using static Raylib_cs.Raylib;
 
 class FallBlock : Falling
 
@@ -8,8 +9,11 @@ class FallBlock : Falling
     MovementObjects Movement = new MovementObjects();
     public int GenerateFallBlock;
 
+    public bool current;
     public Color COLOR;
     Falling fall = new Falling();
+    Player detection = new Player();
+
 
    
 
@@ -17,6 +21,7 @@ class FallBlock : Falling
     {
         GenerateFallBlock = 0;
         Movement.MovementSpeed = 4;
+        current = true;
     }
 // Creates a single falling FallBlock item
     private Rectangle CreateFallBlockObject()
@@ -77,7 +82,12 @@ class FallBlock : Falling
         {
         FallBlockList[i] = FallBlockFalling(FallBlockList[i]);
         Raylib.DrawRectangleRec(FallBlockList[i], COLOR);
-            if (FallBlockList[i].y >= 485)
+            if (CheckCollisionCircleRec(detection.CircleCenter, 23, FallBlockList[i]))
+            {
+                FallBlockList.Remove(FallBlockList[i]);
+                ListAmount = FallBlockList.Count;
+            }
+            else if (FallBlockList[i].y >= 485)
             {
                 FallBlockList.Remove(FallBlockList[i]);
                 ListAmount = FallBlockList.Count;
