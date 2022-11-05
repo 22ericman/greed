@@ -6,10 +6,7 @@ namespace Greed
 {
      class Program : MovementObjects
     {
-        public Program()
-        {
-        
-        }
+    
         public static void Main()
         {
             //sets things up.
@@ -22,6 +19,7 @@ namespace Greed
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "Greed");
             Raylib.InitAudioDevice();
             Raylib.SetTargetFPS(60);
+           
 
         
 

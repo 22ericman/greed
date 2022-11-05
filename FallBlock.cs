@@ -38,10 +38,8 @@ class FallBlock : Falling
         current = true;
         TrashOrTreasure = 0;
         score = 0;
-        wave = Raylib.LoadWave("img/MinecraftDamage.wav");
-        sound = Raylib.LoadSoundFromWave(wave);
-        wave2 = Raylib.LoadWave("img/yes.wav");
-        sound2 = Raylib.LoadSoundFromWave(wave2);
+        
+        
     }
 // Creates a single falling FallBlock item
     private Rectangle CreateFallBlockObject()
@@ -92,9 +90,10 @@ class FallBlock : Falling
     }
 
     public void DisplayFallBlockList(Vector2 VectorPosition)
-    {
+    { 
                 //A for loop for each item in the list that updates each falling trash object, if it is too low it deletes it, in this for loop we will also need to do
-                //the hit detection for the player chracter (moselys head hehe)  
+                //the hit detection for the player chracter (moselys head hehe)
+        
         var ListAmount = FallBlockList.Count;
         for(int i = 0; i < ListAmount; i++)
         {
@@ -108,11 +107,15 @@ class FallBlock : Falling
                 if (TrashOrTreasure == 1)
                 {
                 UpdatePositiveScore();
+                wave2 = Raylib.LoadWave("img/yes.wav");
+                sound2 = Raylib.LoadSoundFromWave(wave2);
                 Raylib.PlaySound(sound2);
                 }
                 else if (TrashOrTreasure == 2)
                 {
                 UpdateNegativeScore();
+                wave = Raylib.LoadWave("img/MinecraftDamage.wav");
+                sound = Raylib.LoadSoundFromWave(wave);
                 Raylib.PlaySound(sound);
                 }
                 

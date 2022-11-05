@@ -22,6 +22,8 @@ class Player : MovementObjects
      CircleCenter.X = 380+27;
      CircleCenter.Y = 420+27;
 
+   
+            
 }
 
 
@@ -35,6 +37,7 @@ class Player : MovementObjects
         UnloadImage(image);
         return texture;
     }
+    
 
 // Takes the loaded texture and moves around the x and y values according to the arrow keys pressed. 
 // Only allows you to move to certain values so you are kept in a box.
